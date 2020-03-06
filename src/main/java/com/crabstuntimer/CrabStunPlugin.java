@@ -93,12 +93,12 @@ public class CrabStunPlugin extends Plugin {
 		if (actor.getName() != null && actor.getName().contains("Jewelled Crab") && actor.getGraphic() == CRAB_STUN_GRAPHIC) {
 			WorldPoint worldPoint = actor.getWorldLocation();
 			CrabStun stunEvent = new CrabStun(actor, worldPoint, Instant.now(), getStunDurationTicks(), 0);
-
 			for (CrabStun stun : stunEvents) {
 				if (stun.getCrab().equals(actor)) {
 					stun.setStartTime(Instant.now());
 				}
 			}
+			overlay.getRandomIntervalTimers().removeIf(timer -> (timer.getCrab().equals(stunEvent.getCrab())));
 			stunEvents.add(stunEvent);
 		}
 	}

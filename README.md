@@ -6,5 +6,13 @@ Crabs in the Chambers of Xeric have a 10-tick window where they will unstun. Thi
 exactly when the crabs will become unstunned. Instead, it will show one timer that displays the minimum amount of time, 
 as well as a separate timer to show the 10-tick interval.
 
+## Changelog
+####3/5/19
+Fixed a bug where restunning a crab when the random interval timer was showing wouldn't remove the old timer. 
+
+####3/4/19
+Initial release
+
+##
 
 ![Example image](https://i.imgur.com/AKp5BEY.png)
