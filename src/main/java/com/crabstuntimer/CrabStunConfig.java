@@ -55,10 +55,20 @@ public interface CrabStunConfig extends Config {
 	}
 
 	@ConfigItem(
+			keyName = "timerDiameter",
+			name = "Size of timer",
+			description = "Configures the diameter of the timer",
+			position = 3
+	)
+	default int timerDiameter() {
+		return 25;
+	}
+
+	@ConfigItem(
 			keyName = "textType",
 			name = "Choose text type",
 			description = "Configures whether ticks or seconds are displayed",
-			position = 3
+			position = 4
 	)
 	default TimerTextStyle textType() {
 		return TICKS;
@@ -68,7 +78,7 @@ public interface CrabStunConfig extends Config {
 			keyName = "normalTimerColor",
 			name = "Timer color",
 			description = "Configures the color of the timer that is displayed",
-			position = 4
+			position = 5
 	)
 	default Color normalTimerColor() {
 		return Color.YELLOW;
@@ -78,7 +88,7 @@ public interface CrabStunConfig extends Config {
 			keyName = "randomTimerColor",
 			name = "Random interval color",
 			description = "Configures the color of the timer during the random interval",
-			position = 5
+			position = 6
 	)
 	default Color randomTimerColor() {
 		return Color.CYAN;
@@ -88,7 +98,7 @@ public interface CrabStunConfig extends Config {
 			keyName = "timerWarningColor",
 			name = "Timer warning color",
 			description = "Configures the color of the timer when the crab is almost unstunned",
-			position = 6
+			position = 7
 	)
 	default Color timerWarningColor() {
 		return Color.RED;
@@ -98,7 +108,7 @@ public interface CrabStunConfig extends Config {
 			keyName = "timerBorderColor",
 			name = "Timer border color",
 			description = "Configures the color of the timer that is displayed",
-			position = 7
+			position = 8
 	)
 	default Color timerBorderColor() {
 		return Color.ORANGE;
@@ -108,7 +118,7 @@ public interface CrabStunConfig extends Config {
 			keyName = "randomBorderColor",
 			name = "Random border color",
 			description = "Configures the color of the timer that is displayed",
-			position = 8
+			position = 9
 	)
 	default Color randomBorderColor() {
 		return Color.LIGHT_GRAY;

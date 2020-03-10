@@ -117,6 +117,7 @@ class CrabStunOverlay extends Overlay {
                 ppc.setFill(pieFillColor);
                 ppc.setPosition(point);
                 ppc.setProgress(percent);
+                ppc.setDiameter(config.timerDiameter());
                 ppc.render(graphics);
             }
 
