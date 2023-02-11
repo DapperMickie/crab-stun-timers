@@ -83,7 +83,7 @@ public class CrabStunPlugin extends Plugin {
 
 	@Subscribe
 	public void onGraphicChanged(GraphicChanged event) {
-		if (client.getVar(Varbits.IN_RAID) != 1) {
+		if (client.getVarbitValue(Varbits.IN_RAID) != 1) {
 			return;
 		}
 		final int CRAB_STUN_GRAPHIC = 245;
@@ -119,7 +119,7 @@ public class CrabStunPlugin extends Plugin {
 	}
 
 	private int getStunDurationTicks() {
-		switch (client.getVar(Varbits.RAID_PARTY_SIZE)) {
+		switch (client.getVarbitValue(Varbits.RAID_PARTY_SIZE)) {
 			case 1:
 				return TeamSize.ONE.getStunDuration();
 			case 2:
