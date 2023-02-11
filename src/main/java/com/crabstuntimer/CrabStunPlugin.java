@@ -34,7 +34,6 @@ import net.runelite.api.Varbits;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.events.GraphicChanged;
-import net.runelite.api.events.NpcChanged;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
@@ -52,8 +51,7 @@ import java.util.List;
 @PluginDescriptor(
 		name = "Crab Stun Timers",
 		description = "Show crab stun timers",
-		tags = {"overlay", "raid", "pvm", "timers"},
-		enabledByDefault = false
+		tags = {"overlay", "raid", "pvm", "timers"}
 )
 public class CrabStunPlugin extends Plugin {
 	@Inject

@@ -7,6 +7,9 @@ exactly when the crabs will become unstunned. Instead, it will show one timer th
 as well as a separate timer to show the 10-tick interval.
 
 ## Changelog
+#### 2/10/23
+Enable plugin by default.
+
 #### 3/9/19
 Add custom timer size as an option.
 
