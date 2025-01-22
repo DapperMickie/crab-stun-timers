@@ -71,6 +71,8 @@ public class CrabStunPlugin extends Plugin {
 	@Getter(AccessLevel.PACKAGE)
 	private final List<CrabStun> stunEvents = new ArrayList<>();
 
+	private static final int RAID_PARTY_SIZE = 5424;
+
 	@Override
 	protected void startUp() {
 		overlayManager.add(overlay);
@@ -119,7 +121,7 @@ public class CrabStunPlugin extends Plugin {
 	}
 
 	private int getStunDurationTicks() {
-		switch (client.getVarbitValue(Varbits.RAID_PARTY_SIZE)) {
+		switch (client.getVarbitValue(RAID_PARTY_SIZE)) {
 			case 1:
 				return TeamSize.ONE.getStunDuration();
 			case 2:
