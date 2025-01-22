@@ -29,6 +29,7 @@ import lombok.Getter;
 import net.runelite.api.Client;
 import net.runelite.api.Perspective;
 import net.runelite.api.Point;
+import net.runelite.api.WorldView;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.ui.overlay.Overlay;
@@ -76,6 +77,7 @@ class CrabStunOverlay extends Overlay {
         }
 
         Instant now = Instant.now();
+        WorldView wv = client.getTopLevelWorldView();
         for (Iterator<CrabStun> it = stunEvents.iterator(); it.hasNext(); ) {
             Color pieFillColor = (inRandomInterval ? config.randomTimerColor() : config.normalTimerColor());
             Color pieBorderColor = (inRandomInterval ? config.randomBorderColor() : config.timerBorderColor());
@@ -86,7 +88,7 @@ class CrabStunOverlay extends Overlay {
             float millisLeft = (stunDurationMillis - (now.toEpochMilli() - stun.getStartTime().toEpochMilli()));
             double secondsLeft = Math.round(millisLeft / 100.0) / 10.0;
             WorldPoint worldPoint = stun.getWorldPoint();
-            LocalPoint loc = LocalPoint.fromWorld(client, worldPoint);
+            LocalPoint loc = LocalPoint.fromWorld(wv, worldPoint);
 
             if (percent >= .9) {
                 pieFillColor = config.timerWarningColor();
@@ -105,7 +107,7 @@ class CrabStunOverlay extends Overlay {
                 continue;
             }
 
-            Point point = Perspective.localToCanvas(client, loc, client.getPlane(), stun.getZOffset());
+            Point point = Perspective.localToCanvas(client, loc, wv.getPlane(), stun.getZOffset());
             if (point == null) {
                 it.remove();
                 continue;
